@@ -7,11 +7,12 @@ import android.view.View;
 
 public class Projectiles extends View {
 
-	private int x, y, speedX;
+	private float x, y;
+	private int speedX;
 	private boolean visible;
 	Paint paint = new Paint();
 
-	public Projectiles(Context context, int startX, int startY) {
+	public Projectiles(Context context, float startX, float startY) {
 		super(context);
 		
 		x = startX;

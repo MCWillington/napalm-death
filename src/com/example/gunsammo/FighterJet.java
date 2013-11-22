@@ -35,5 +35,93 @@ public class FighterJet extends View {
 		canvas.drawBitmap(resizeBitmap, xPosition, yPosition, paint);
 		this.invalidate();
 	}
+
+	public float getxPosition() {
+		return xPosition;
+	}
+
+	public float getyPosition() {
+		return yPosition;
+	}
+
+	public int getVelocity() {
+		return velocity;
+	}
+
+	public int getLife() {
+		return life;
+	}
+
+	public int getBullets() {
+		return bullets;
+	}
+
+	public int getBombs() {
+		return bombs;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public Paint getPaint() {
+		return paint;
+	}
+
+	public Bitmap getBitmap() {
+		return bitmap;
+	}
+
+	public Bitmap getResizeBitmap() {
+		return resizeBitmap;
+	}
+
+	public void setxPosition(float xPosition) {
+		this.xPosition = xPosition;
+	}
+
+	public void setyPosition(float yPosition) {
+		this.yPosition = yPosition;
+	}
+
+	public void setVelocity(int velocity) {
+		this.velocity = velocity;
+	}
+
+	public void setLife(int life) {
+		this.life = life;
+	}
+
+	public void setBullets(int bullets) {
+		this.bullets = bullets;
+	}
+
+	public void setBombs(int bombs) {
+		this.bombs = bombs;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
+	public void setPaint(Paint paint) {
+		this.paint = paint;
+	}
+
+	public void setBitmap(Bitmap bitmap) {
+		this.bitmap = bitmap;
+	}
+
+	public void setResizeBitmap(Bitmap resizeBitmap) {
+		this.resizeBitmap = resizeBitmap;
+	}
 	
 }

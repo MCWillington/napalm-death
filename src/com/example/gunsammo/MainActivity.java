@@ -27,7 +27,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 
 		main = (RelativeLayout) findViewById(R.id.main);
 		fighterjet = new FighterJet(getApplicationContext());
-		projectiles = new Projectiles(getApplicationContext(), 100, 100);
+		projectiles = new Projectiles(getApplicationContext(), fighterjet.getxPosition(), fighterjet.getyPosition());
 		enemy = new Enemy(getApplicationContext());
 		main.addView(fighterjet);
 		main.addView(projectiles);
