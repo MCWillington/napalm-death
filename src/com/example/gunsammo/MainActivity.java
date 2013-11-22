@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 public class MainActivity extends Activity implements SensorEventListener {
 
 	FighterJet fighterjet;
+	Projectiles projectiles;
 	RelativeLayout main;
 	
 	SensorManager sensorManager;
@@ -24,7 +25,9 @@ public class MainActivity extends Activity implements SensorEventListener {
 		
 		main = (RelativeLayout) findViewById(R.id.main);
 		fighterjet = new FighterJet(getApplicationContext());
+		projectiles = new Projectiles(getApplicationContext(), 100, 100);
 		main.addView(fighterjet);
+		main.addView(projectiles);
 		
 		sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);

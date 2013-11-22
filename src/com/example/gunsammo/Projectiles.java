@@ -1,15 +1,30 @@
 package com.example.gunsammo;
 
-public class Projectiles {
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+
+public class Projectiles extends View {
 
 	private int x, y, speedX;
 	private boolean visible;
+	Paint paint = new Paint();
 
-	public Projectiles(int startX, int startY) {
+	public Projectiles(Context context, int startX, int startY) {
+		super(context);
+		
 		x = startX;
 		y = startY;
 		speedX = 7;
-		visible = true;
+	}
+	
+	@Override
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+		canvas.drawCircle(x, y, 10, paint);
+		this.invalidate();
+		update();
 	}
 
 	public void update() {
@@ -19,11 +34,11 @@ public class Projectiles {
 		}
 	}
 
-	public int getX() {
+	public float getX() {
 		return x;
 	}
 
-	public int getY() {
+	public float getY() {
 		return y;
 	}
 
@@ -50,6 +65,5 @@ public class Projectiles {
 	public void setVisible(boolean visible) {
 		this.visible = visible;
 	}
-
 
 }
