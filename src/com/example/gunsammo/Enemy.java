@@ -1,11 +1,37 @@
 package com.example.gunsammo;
 
-public class Enemy {
-	private int maxHealth, currentHealth, power, speedX, centerX, centerY;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+
+public class Enemy extends View {
+	
+	private int maxHealth = 100;
+	private int currentHealth = 100;
+	private int power = 100;
+	private int speed = 1;
+	private int centerX = 100;
+	private int centerY = 0;
+	private int radius = 10;
+	Paint paint = new Paint();
+	
+	public Enemy(Context context) {
+		super(context);
+		
+	}
+	
+	@Override
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+		update();
+		canvas.drawCircle(centerX, centerY, radius, paint);
+		this.invalidate();
+	}
 
 	// Behavioral Methods
 	public void update() {
-		centerX += speedX;
+		centerY += speed;
 	}
 
 	public void die() {
@@ -29,7 +55,7 @@ public class Enemy {
 	}
 
 	public int getSpeedX() {
-		return speedX;
+		return speed;
 	}
 
 	public int getCenterX() {
@@ -53,7 +79,7 @@ public class Enemy {
 	}
 
 	public void setSpeedX(int speedX) {
-		this.speedX = speedX;
+		this.speed = speed;
 	}
 
 	public void setCenterX(int centerX) {
