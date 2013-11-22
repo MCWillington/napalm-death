@@ -8,7 +8,7 @@ import android.view.View;
 public class Projectiles extends View {
 
 	private float x, y;
-	private int speedX;
+	private int speedY;
 	private boolean visible;
 	Paint paint = new Paint();
 
@@ -17,7 +17,7 @@ public class Projectiles extends View {
 		
 		x = startX;
 		y = startY;
-		speedX = 7;
+		speedY = 7;
 	}
 	
 	@Override
@@ -29,8 +29,8 @@ public class Projectiles extends View {
 	}
 
 	public void update() {
-		x += speedX;
-		if (x > 800) {
+		y += speedY;
+		if (y > 800) {
 			visible = false;
 		}
 	}
@@ -43,8 +43,8 @@ public class Projectiles extends View {
 		return y;
 	}
 
-	public int getSpeedX() {
-		return speedX;
+	public int getSpeedY() {
+		return speedY;
 	}
 
 	public boolean isVisible() {
@@ -59,8 +59,8 @@ public class Projectiles extends View {
 		this.y = y;
 	}
 
-	public void setSpeedX(int speedX) {
-		this.speedX = speedX;
+	public void setSpeedY(int speedY) {
+		this.speedY = speedY;
 	}
 
 	public void setVisible(boolean visible) {
